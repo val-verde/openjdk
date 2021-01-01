@@ -190,6 +190,10 @@ AC_DEFUN([PLATFORM_EXTRACT_VARS_FROM_OS],
       VAR_OS=linux
       VAR_OS_TYPE=unix
       ;;
+    *musl*)
+      VAR_OS=linux
+      VAR_OS_TYPE=unix
+      ;;
     *darwin*)
       VAR_OS=macosx
       VAR_OS_TYPE=unix
@@ -226,7 +230,7 @@ AC_DEFUN([PLATFORM_EXTRACT_VARS_FROM_OS],
 AC_DEFUN([PLATFORM_EXTRACT_VARS_FROM_LIBC],
 [
   case "$1" in
-    *linux*-musl)
+    *musl)
       VAR_LIBC=musl
       ;;
     *linux*-gnu)
