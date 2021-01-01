@@ -137,7 +137,7 @@
 // for timer info max values which include all bits
 #define ALL_64_BITS CONST64(0xFFFFFFFFFFFFFFFF)
 
-#ifdef MUSL_LIBC
+#if defined(MUSL_LIBC) && !defined(__GLIBC__)
 // dlvsym is not a part of POSIX
 // and musl libc doesn't implement it.
 static void *dlvsym(void *handle,
